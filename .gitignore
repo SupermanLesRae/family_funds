@@ -10,3 +10,4 @@ dist
 local-data/
 desktop/node_modules/
 desktop/dist/
+.env*
