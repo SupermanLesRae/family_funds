@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+/* Semantic tokens: single light theme. */
+/* Palette (only): #eeedeb, #eedfe3, #f5f4f3, #da899c. Text uses a near-black neutral for legibility; tints are mixes of the palette. */
+:root {
+  --bg: #f8f1ef;
+  --surface: #f5f4f3;
+  --soft: #eedfe3;
+  --border: color-mix(in srgb, #da899c 50%, #f5f4f3);
+  --fg: #000000;
+  --muted: #5f5b5c;
+  --brand: #da899c;
+  --brand-hover: color-mix(in srgb, #da899c 82%, #262826);
+  --brand-fg: #ffffff;
+  --accent: #262826;
+  --cta: #da899c;
+  --cta-hover: color-mix(in srgb, #da899c 82%, #262826);
+  --cta-fg: #ffffff;
+  --ink: #262826;
+  --ink-fg: #f5f4f3;
+  --danger: #b4233f;
+  --danger-soft: #eedfe3;
+  --warn-bg: #eedfe3;
+  --warn-fg: #262826;
+  color-scheme: light;
+}
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-soft: var(--soft);
+  --color-border: var(--border);
+  --color-fg: var(--fg);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-fg: var(--brand-fg);
+  --color-accent: var(--accent);
+  --color-cta: var(--cta);
+  --color-cta-hover: var(--cta-hover);
+  --color-cta-fg: var(--cta-fg);
+  --color-ink: var(--ink);
+  --color-ink-fg: var(--ink-fg);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warn-bg: var(--warn-bg);
+  --color-warn-fg: var(--warn-fg);
+}
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
+
+h1 {
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+/* Native selects: inset the chevron from the edge. */
+select {
+  appearance: none;
+  padding-right: 2.5rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%235f5f5b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+}
+
+/* No bold anywhere: reset browser-default bold on headings, strong, th. */
+h1, h2, h3, h4, h5, h6, b, strong, th {
+  font-weight: inherit;
+}

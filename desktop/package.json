@@ -1,0 +1,21 @@
+{
+  "name": "familyfunds-desktop",
+  "private": true,
+  "version": "1.0.0",
+  "description": "FamilyFunds Mac app: a shell around the deployed web app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --mac"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.familyfunds.app",
+    "productName": "FamilyFunds",
+    "files": ["main.js", "offline.html", "config.json"],
+    "mac": { "category": "public.app-category.finance", "target": ["dmg"] }
+  }
+}

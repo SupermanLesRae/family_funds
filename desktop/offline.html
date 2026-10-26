@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>FamilyFunds</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f8f1ef; color: #000; font-family: "Open Sans", sans-serif; font-weight: 300; text-align: center; }
+    button { margin-top: 16px; padding: 10px 24px; border: 0; border-radius: 999px; background: #da899c; color: #fff; font: inherit; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 style="font-weight:400">Can't reach FamilyFunds</h1>
+    <p>Check your internet connection and try again.</p>
+    <button id="retry" type="button">Retry</button>
+  </main>
+  <script>
+    document.getElementById("retry").addEventListener("click", () => {
+      location.href = new URLSearchParams(location.search).get("url");
+    });
+  </script>
+</body>
+</html>
